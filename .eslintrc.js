@@ -32,6 +32,8 @@ module.exports = {
   },
   root: true,
   rules: {
+    indent: ['error', 2],
+    'eol-last': ['error', 'always'],
     'react/prop-types': 'warn',
   },
 };
