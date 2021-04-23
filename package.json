@@ -1,5 +1,5 @@
 {
-  "name": "course-management",
+  "name": "course-manager",
   "description": "A Course Management app built with React and Redux",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --port 3000"
