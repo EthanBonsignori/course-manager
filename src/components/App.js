@@ -15,7 +15,6 @@ const App = () => (
       <Route path='/courses' component={CoursesPage} />
       <Route component={PageNotFound} />
     </Switch>
-
   </div>
 );
 
