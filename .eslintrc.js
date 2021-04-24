@@ -35,5 +35,6 @@ module.exports = {
     indent: ['error', 2],
     'eol-last': ['error', 'always'],
     'react/prop-types': 'warn',
+    'no-underscore-dangle': 'off',
   },
 };
