@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AboutPage from './AboutPage';
-import CoursesPage from './common/course/CoursesPage';
+import CoursesPage from './course/CoursesPage';
 import Header from './common/Header';
 import HomePage from './HomePage';
 import PageNotFound from './PageNotFound';
