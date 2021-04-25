@@ -52,6 +52,7 @@ const CourseForm = ({
     </button>
   </form>
 );
+
 CourseForm.propTypes = {
   authors: PropTypes.array.isRequired,
   course: PropTypes.object.isRequired,
