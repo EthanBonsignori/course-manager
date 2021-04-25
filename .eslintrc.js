@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     node: true,
     jest: true,
   },
@@ -9,7 +9,7 @@ module.exports = {
     'airbnb-base',
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
+    'prettier',
     'plugin:import/errors',
     'plugin:import/warnings',
   ],
@@ -19,12 +19,10 @@ module.exports = {
       jsx: true,
       modules: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'prettier'],
   settings: {
     react: {
       version: 'detect',
@@ -32,9 +30,11 @@ module.exports = {
   },
   root: true,
   rules: {
-    indent: ['error', 2],
+    'prettier/prettier': 'error',
+    indent: 'off',
     'eol-last': ['error', 'always'],
     'react/prop-types': 'warn',
+    'no-unused-vars': 'warn',
     'no-underscore-dangle': 'off',
     'no-console': 'off',
   },
