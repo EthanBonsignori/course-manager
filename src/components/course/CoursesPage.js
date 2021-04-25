@@ -5,12 +5,7 @@ import * as courseActions from '../../redux/actions/courseActions';
 import * as authorActions from '../../redux/actions/authorActions';
 import CourseList from './CourseList';
 
-const CoursesPage = ({
-  courses,
-  authors,
-  loadCourses,
-  loadAuthors,
-}) => {
+const CoursesPage = ({ courses, authors, loadCourses, loadAuthors }) => {
   useEffect(() => {
     try {
       if (courses.length === 0) {
@@ -40,12 +35,13 @@ CoursesPage.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  courses: state.authors.length === 0
-    ? []
-    : state.courses.map((course) => ({
-      ...course,
-      authorName: state.authors.find((a) => a.id === course.authorId).name,
-    })),
+  courses:
+    state.authors.length === 0
+      ? []
+      : state.courses.map((course) => ({
+          ...course,
+          authorName: state.authors.find((a) => a.id === course.authorId).name,
+        })),
   authors: state.authors,
 });
 
