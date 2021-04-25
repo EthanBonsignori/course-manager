@@ -5,7 +5,9 @@ const HomePage = () => (
   <div className='jumbotron'>
     <h1>CodeSinger Administration</h1>
     <p>React, Redux, and React Router for ultra-responsive web apps.</p>
-    <Link to='about' className='btn btn-primary btn-lg'>Learn More</Link>
+    <Link to='about' className='btn btn-primary btn-lg'>
+      Learn More
+    </Link>
   </div>
 );
 
