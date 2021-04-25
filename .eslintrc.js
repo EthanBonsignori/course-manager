@@ -37,5 +37,6 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-underscore-dangle': 'off',
     'no-console': 'off',
+    'no-unused-expressions': 'off',
   },
 };
