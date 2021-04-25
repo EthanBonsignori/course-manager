@@ -77,7 +77,7 @@ const authors = [
   { id: 3, name: 'Dan Wahlin' },
 ];
 
-const newCourse = {
+const emptyCourse = {
   id: null,
   title: '',
   authorId: null,
@@ -86,7 +86,7 @@ const newCourse = {
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
-  newCourse,
+  emptyCourse,
   courses,
   authors,
 };
