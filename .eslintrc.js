@@ -36,5 +36,6 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'react/prop-types': 'warn',
     'no-underscore-dangle': 'off',
+    'no-console': 'off',
   },
 };
