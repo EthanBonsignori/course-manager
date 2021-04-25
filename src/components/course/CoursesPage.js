@@ -1,47 +1,57 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as courseActions from '../../redux/actions/courseActions';
+import * as authorActions from '../../redux/actions/authorActions';
+import CourseList from './CourseList';
 
-const CoursesPage = ({ courses, createCourse }) => {
-  const [courseForm, setCourseForm] = useState({
-    title: '',
-  });
-
-  const handleChange = (event) => {
-    const course = { ...courseForm, title: event.target.value };
-    setCourseForm(course);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    createCourse(courseForm);
-  };
+const CoursesPage = ({
+  courses,
+  authors,
+  loadCourses,
+  loadAuthors,
+}) => {
+  useEffect(() => {
+    try {
+      if (courses.length === 0) {
+        loadCourses();
+      }
+      if (authors.length === 0) {
+        loadAuthors();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <h2>Courses</h2>
-      <h3>Add Course</h3>
-      <input type='text' onChange={handleChange} value={courseForm.title} />
-      <input type='submit' value='Save' />
-      {courses.map((course) => (
-        <div key={course.title}>{course.title}</div>
-      ))}
-    </form>
+      <CourseList courses={courses} />
+    </>
   );
 };
 
 CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
-  createCourse: PropTypes.func.isRequired,
+  authors: PropTypes.array.isRequired,
+  loadCourses: PropTypes.func.isRequired,
+  loadAuthors: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  courses: state.courses,
+  courses: state.authors.length === 0
+    ? []
+    : state.courses.map((course) => ({
+      ...course,
+      authorName: state.authors.find((a) => a.id === course.authorId).name,
+    })),
+  authors: state.authors,
 });
 
 const mapDispatchToProps = {
-  createCourse: courseActions.createCourse,
+  loadCourses: courseActions.loadCourses,
+  loadAuthors: authorActions.loadAuthors,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
