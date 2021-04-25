@@ -2,7 +2,9 @@
   "name": "course-manager",
   "description": "A Course Management app built with React and Redux",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.dev.js --port 3000"
+    "dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "predev:api": "node tools/createMockDb.js",
+    "dev:api": "node tools/apiServer.js"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
