@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const CourseList = ({ courses }) => (
-  <table className="table">
+  <table className='table'>
     <thead>
       <tr>
         <th />
@@ -17,10 +17,9 @@ const CourseList = ({ courses }) => (
         <tr key={course.id}>
           <td>
             <a
-              className="btn btn-light"
-              href={`http://pluralsight.com/courses/${course.slug}`}
-            >
-                Watch
+              className='btn btn-light'
+              href={`http://pluralsight.com/courses/${course.slug}`}>
+              Watch
             </a>
           </td>
           <td>
